@@ -1,0 +1,33 @@
+'''Crie um programa capaz de ler e armazenar vários números em uma lista. Para isso, após digitar o primeiro número, o programa sempre deverá perguntar se o usuário deseja inserir ou não um novo número. Caso a resposta (entrada) seja igual a "S" o programa continuará, caso seja igual a "N", o programa deverá ser interrompido. Em seguida, seu programa deverá exibir na tela as seguintes informações:
+
+a) Total de números que foram adicionados a lista, isto é, o total de vezes que o usuário digitou um número.
+
+b) A lista em ordem crescente.
+
+c) A lista em ordem decrescente. 
+
+d) Se o valor 5 foi digitado e está ou não na lista.'''
+
+
+
+
+lista = []
+cont = 0
+
+while True :
+    n = int (input('DIGITE UM NÚMERO : '))
+    lista.append(n)
+    resposta = str (input("VOCÊ DESEJA ADCIONAR OUTRO NÚEMRO : ")).upper()
+    if resposta == 'N' :
+        break
+    if n == 5 :
+        cont = cont +1
+qt = len(lista)
+lista.sort()
+print(f'A sua lista possui um total de {qt} números.')
+print(f'A lista em ordem crescente é:',lista)
+print(f'A lista em ordem decrescente é:',sorted (lista,reverse= True))
+if cont > 0 :
+    print('O valor 5 foi digitado. Portanto, se encontra na lista.')
+else :
+    print('O valor 5 não foi digitado')
